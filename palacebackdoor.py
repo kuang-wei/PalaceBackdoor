@@ -18,8 +18,8 @@ def Scheduler(second, testbool=False):
 								  int(today[2]), 9, 59, 
 								  int(second))
 
-	print '\nBot scheduled at', TriggerTime.strftime('%H:%M:%S')
-	print 'Current time:   ', dt.datetime.now().strftime('%H:%M:%S')
+	print '\nCurrent time:   ', dt.datetime.now().strftime('%H:%M:%S')
+	print 'Bot scheduled at', TriggerTime.strftime('%H:%M:%S')
 	sleep((TriggerTime-dt.datetime.now()).total_seconds())
 	return None
 
@@ -67,6 +67,34 @@ def BackdoorOpen(keyword, targetsize):
 	print "Succesfully opened link at", now().strftime('%H:%M:%S')
 	return (carturl+targetid+":1")
 
+def DirectFetch(keyword, targetsize):
+	carturl = 'https://shop-usa.palaceskateboards.com/cart/'
+	itemurl = ('https://shop-usa.palaceskateboards.com/products/'+keyword)
+	now = dt.datetime.now
+	FoundItem = False
+
+	while not FoundItem:
+		ritem = requests.get(itemurl+'.xml')
+		itemsoup = BeautifulSoup(ritem.content, "lxml")
+		itemsxml = itemsoup.find_all("variant")
+		if len(itemsxml)!=0:
+			for item in itemsxml:
+				if item.find("title").text.lower() == targetsize:
+					targetid = item.find("id").text
+					print "Size matched at", now().strftime('%H:%M:%S')
+					FoundItem = True
+					break
+		else:
+			delaytime = uniform(0.5, 2.0)
+			print "Item xml not available yet, delay for %.2f s"%delaytime
+			sleep(delaytime)
+
+	print "\nOpening backdoor link at", now().strftime('%H:%M:%S')
+	print 'Backdoor link:', (carturl+targetid+":1")
+	webbrowser.open(carturl+targetid+":1")
+	print "Succesfully opened link at", now().strftime('%H:%M:%S')
+	return None
+
 def main():
 	newurl = 'https://shop-usa.palaceskateboards.com/collections/new'
 	olditem = GetFirstNew()
@@ -88,5 +116,25 @@ def main():
 	BackdoorOpen(keyword, targetsize)
 	return None
 
+def maindirect():
+	keyword = raw_input('Target keyword (i.e. block-hood-black)? ')
+	targetsize = raw_input('Target size (i.e. medium)? ')
+	test = input('Test run (True/False)? ')
+
+	if not test:
+		startsecond = input('Start bot at 09:59:x (x from 0 to 59)? ')
+		Scheduler(startsecond, test)
+		print 'Bot starting at', dt.datetime.now().strftime('%H:%M:%S'), '\n'
+	else:
+		_ = raw_input('Start now (hit ENTER)? ')
+		startsecond = 0
+		Scheduler(startsecond, test)
+		print '\nBot starting at', dt.datetime.now().strftime('%H:%M:%S'), '\n'
+
+	DirectFetch(keyword, targetsize)
+	return None
+	
+
+
 if __name__ == '__main__':
-	main()
+	maindirect()
