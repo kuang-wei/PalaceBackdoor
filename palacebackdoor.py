@@ -100,31 +100,15 @@ def main():
 	olditem = GetFirstNew()
 	keyword = raw_input('Target keyword (i.e. block-hood-black)? ')
 	targetsize = raw_input('Target size (i.e. medium)? ')
+	direct = input('Use DirectFetch (True/False)? ')
 	test = input('Test run (True/False)? ')
 
 	if not test:
 		startsecond = input('Start bot at 09:59:x (x from 0 to 59)? ')
 		Scheduler(startsecond, test)
 		print 'Bot starting at', dt.datetime.now().strftime('%H:%M:%S'), '\n'
-		ChangeDetection(olditem)
-	else:
-		_ = raw_input('Start now (hit ENTER)? ')
-		startsecond = 0
-		Scheduler(startsecond, test)
-		print '\nBot starting at', dt.datetime.now().strftime('%H:%M:%S'), '\n'
-
-	BackdoorOpen(keyword, targetsize)
-	return None
-
-def maindirect():
-	keyword = raw_input('Target keyword (i.e. block-hood-black)? ')
-	targetsize = raw_input('Target size (i.e. medium)? ')
-	test = input('Test run (True/False)? ')
-
-	if not test:
-		startsecond = input('Start bot at 09:59:x (x from 0 to 59)? ')
-		Scheduler(startsecond, test)
-		print 'Bot starting at', dt.datetime.now().strftime('%H:%M:%S'), '\n'
+		if not direct:
+			ChangeDetection(olditem)
 	else:
 		_ = raw_input('Start now (hit ENTER)? ')
 		startsecond = 0
@@ -133,8 +117,6 @@ def maindirect():
 
 	DirectFetch(keyword, targetsize)
 	return None
-	
-
 
 if __name__ == '__main__':
-	maindirect()
+	main()
