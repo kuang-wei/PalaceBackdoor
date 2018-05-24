@@ -114,8 +114,11 @@ def main():
 		startsecond = 0
 		Scheduler(startsecond, test)
 		print '\nBot starting at', dt.datetime.now().strftime('%H:%M:%S'), '\n'
-
-	DirectFetch(keyword, targetsize)
+	
+	if direct:
+		DirectFetch(keyword, targetsize)
+	else:
+		BackdoorOpen(keyword, targetsize)
 	return None
 
 if __name__ == '__main__':
