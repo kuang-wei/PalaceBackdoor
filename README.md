@@ -46,7 +46,7 @@ For example, this [sweater](https://www.palaceskateboards.com/range/summer-2018/
 
 ![](https://i.imgur.com/FNVbmvv.png)
 
-So the keyword to be entered will simply be *p-3-crew-grey-marl*
+So the keyword to be entered will simply be **p-3-crew-grey-marl**
 
 #### Input 2.
 ```
@@ -110,7 +110,7 @@ Backdoor link: https://shop-usa.palaceskateboards.com/cart/3485793943573:1
 Succesfully opened link at 23:10:29
 ```
 ## Outstanding Issues
-* Currently the bot start time is set to 9:59 AM, which is the release time set to the Central Standard Time zone. User would need to <b>change line 18, Column 50</b>, to change the hour according to their local time zone. For example, PST users should change the hour to 7, and EST users should change the hour to 10.
+* Currently the bot start time is set to 9:59 AM, which is the release time set to the Central Standard Time zone. User would need to **change line 18, Column 50**, to change the hour according to their local time zone. For example, PST users should change the hour to 7, and EST users should change the hour to 10.
 * Currently only suitable for US based users
 
 ## Author
