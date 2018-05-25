@@ -65,7 +65,8 @@ def BackdoorOpen(keyword, targetsize):
 	print 'Backdoor link:', (carturl+targetid+":1")
 	webbrowser.open(carturl+targetid+":1")
 	print "Succesfully opened link at", now().strftime('%H:%M:%S')
-	return (carturl+targetid+":1")
+	webbrowser.open("https://shop-usa.palaceskateboards.com/checkout")
+	return None
 
 def DirectFetch(keyword, targetsize):
 	carturl = 'https://shop-usa.palaceskateboards.com/cart/'
@@ -93,6 +94,7 @@ def DirectFetch(keyword, targetsize):
 	print 'Backdoor link:', (carturl+targetid+":1")
 	webbrowser.open(carturl+targetid+":1")
 	print "Succesfully opened link at", now().strftime('%H:%M:%S')
+	webbrowser.open("https://shop-usa.palaceskateboards.com/checkout")
 	return None
 
 def main():
