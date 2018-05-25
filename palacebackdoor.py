@@ -100,8 +100,8 @@ def DirectFetch(keyword, targetsize):
 def main():
 	newurl = 'https://shop-usa.palaceskateboards.com/collections/new'
 	olditem = GetFirstNew()
-	keyword = raw_input('Target keyword (i.e. block-hood-black)? ')
-	targetsize = raw_input('Target size (i.e. medium)? ')
+	keyword = raw_input('Target keyword (i.e. block-hood-black)? ').lower()
+	targetsize = raw_input('Target size (i.e. medium)? ').lower()
 	direct = input('Use DirectFetch (True/False)? ')
 	test = input('Test run (True/False)? ')
 
