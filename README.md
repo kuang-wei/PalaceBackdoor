@@ -43,9 +43,9 @@ The item keyword can be found by going to the [lookbook](https://www.palaceskate
 
 For example, this [sweater](https://www.palaceskateboards.com/range/summer-2018/p-3-crew/) has the following description in the [lookbook](https://www.palaceskateboards.com/range/summer-2018/):
 
-![](https://imgur.com/FNVbmvv)
+![description](https://imgur.com/FNVbmvv)
 
-So the keyword to be entered will simply be <b>p-3-crew-grey-marl</b>>
+So the keyword to be entered will simply be <b>p-3-crew-grey-marl</b>
 
 #### Input 2.
 ```
@@ -86,9 +86,9 @@ If you enter False in Input 4., you will see
 ```
 Start bot at 09:59:x (x from 0 to 59)?
 ```
-Simply enter at number from 0 to 59, and the program will be excuted at 9:59 AM at the second of your input (recommend setting is around 55, since sometimes the drop is earlier than 11 AM EST)
+Simply enter at number from 0 to 59, and the program will be excuted at the second of your input (recommend setting is around 55, since sometimes the drop is earlier than 11 AM EST).
 
-Below is a sample output from the program:
+#### Sample program output:
 
 ```
 Target keyword (i.e. block-hood-black)? basically-a-pique-t-shirt-grey-marl
