@@ -46,7 +46,7 @@ For example, this [sweater](https://www.palaceskateboards.com/range/summer-2018/
 
 ![](https://i.imgur.com/FNVbmvv.png)
 
-So the keyword to be entered will simply be <b>p-3-crew-grey-marl</b>
+So the keyword to be entered will simply be *p-3-crew-grey-marl*
 
 #### Input 2.
 ```
