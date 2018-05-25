@@ -1,5 +1,6 @@
 # PalaceBackdoor
-
+Secure coveted [Palace](https://www.palaceskateboards.com/) items on release day
+![](https://i.imgur.com/4TacdB3.png)
 ## Current Features
 * Instantly cart one desired item
 * Schedule a specific time to execute the bot
@@ -43,7 +44,7 @@ The item keyword can be found by going to the [lookbook](https://www.palaceskate
 
 For example, this [sweater](https://www.palaceskateboards.com/range/summer-2018/p-3-crew/) has the following description in the [lookbook](https://www.palaceskateboards.com/range/summer-2018/):
 
-![description](https://imgur.com/FNVbmvv)
+![](https://i.imgur.com/FNVbmvv.png)
 
 So the keyword to be entered will simply be <b>p-3-crew-grey-marl</b>
 
@@ -110,6 +111,7 @@ Succesfully opened link at 23:10:29
 ```
 ## Outstanding Issues
 * Currently the bot start time is set to 9:59 AM, which is the release time set to the Central Standard Time zone. User would need to <b>change line 18, Column 50</b>, to change the hour according to their local time zone. For example, PST users should change the hour to 7, and EST users should change the hour to 10.
+* Currently only suitable for US based users
 
 ## Author
 * **Kuang Wei**
