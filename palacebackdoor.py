@@ -34,7 +34,7 @@ def GetFirstNew():
 			newitemfound = True
 		except:
 			newitem = ''
-			delaytime = uniform(0.5, 2.0)
+			delaytime = uniform(1.5, 2.5)
 			print "Can't fetch the first new item, delay for %.2f s"%delaytime
 			sleep(delaytime)
 	return str(newitem)
@@ -42,7 +42,7 @@ def GetFirstNew():
 def ChangeDetection(OldItem):
 	NewItem = GetFirstNew()
 	while NewItem==OldItem:
-		delaytime = uniform(0.5, 2.0)
+		delaytime = uniform(1.5, 2.5)
 		print 'Found the same first new item, delay for %.2f s'%delaytime
 		sleep(delaytime)
 		NewItem = GetFirstNew()
@@ -85,7 +85,7 @@ def DirectFetch(keyword, targetsize):
 					FoundItem = True
 					break
 		else:
-			delaytime = uniform(0.5, 2.0)
+			delaytime = uniform(1.5, 2.5)
 			print "Item xml not available yet, delay for %.2f s"%delaytime
 			sleep(delaytime)
 
